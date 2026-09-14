@@ -1,0 +1,127 @@
+/* ========================================================
+   電源供應器圖解與互動探索實驗室 - 核心樣式表
+   Power Supply Interactive Laboratory Stylesheet
+   ======================================================== */
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #060910;
+  color: #f1f5f9;
+}
+
+.font-mono {
+  font-family: 'Fira Code', monospace;
+}
+
+/* 藍圖背景網格 (Blueprint Grid) */
+.blueprint-grid {
+  background-image: 
+    linear-gradient(to right, rgba(30, 41, 59, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 41, 59, 0.35) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* 自訂捲軸樣式 (Custom Scrollbar) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090e1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* 互動滑桿強調色 */
+input[type=range] {
+  accent-color: #06b6d4;
+}
+
+/* 流程階段卡片 (Pipeline Step Cards) */
+.pipeline-step,
+.pipeline-step-smps,
+.pipeline-step-hybrid {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pipeline-step.active {
+  border-color: #06b6d4;
+  background-color: rgba(6, 182, 212, 0.1);
+  box-shadow: 0 0 24px -4px rgba(6, 182, 212, 0.35);
+}
+
+.pipeline-step-smps.active {
+  border-color: #f59e0b;
+  background-color: rgba(245, 158, 11, 0.1);
+  box-shadow: 0 0 24px -4px rgba(245, 158, 11, 0.35);
+}
+
+.pipeline-step-hybrid.active {
+  border-color: #a855f7;
+  background-color: rgba(168, 85, 247, 0.12);
+  box-shadow: 0 0 24px -4px rgba(168, 85, 247, 0.4);
+}
+
+/* 頂部導航頁籤按鈕啟用樣式 */
+.nav-tab-btn.active {
+  background-color: #0284c7;
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(2, 132, 199, 0.4);
+}
+
+/* 數學公式渲染盒 (Formula Boxes) */
+.math-formula-box {
+  background: radial-gradient(circle at 10% 20%, rgba(15, 23, 42, 0.95), rgba(6, 10, 20, 0.98));
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 0.85rem;
+  padding: 0.85rem 1rem;
+}
+
+.math-frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  padding: 0 0.35rem;
+  line-height: 1.15;
+}
+
+.math-num {
+  border-bottom: 1.5px solid rgba(148, 163, 184, 0.6);
+  padding-bottom: 2px;
+  text-align: center;
+  width: 100%;
+  font-weight: 600;
+}
+
+.math-den {
+  padding-top: 2px;
+  text-align: center;
+  width: 100%;
+  font-weight: 600;
+}
+
+.math-var {
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* 物理符號白話字典膠囊 (Glossary Pill) */
+.glossary-pill {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(51, 65, 85, 0.85);
+  border-radius: 0.55rem;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
